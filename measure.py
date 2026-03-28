@@ -49,7 +49,7 @@ def f1score(tp: int, fp: int, fn: int, tn: int):
 def confusionMatrix(tp: int, fp: int, fn: int, tn: int):
     values = pd.DataFrame(data={"Actual positive":[tp, fp], "Actual negative":[fn, tn]}, index=["Predicted positive", "Predicted negative"])
     plt.title("Confusion matrix")
-    sns.heatmap(values, annot=True, cmap='Blues')
+    sns.heatmap(values, annot=True, cmap='Blues', fmt='d')
     plt.show()
     print("Accuracy:", round(accuracy(tp, fp, fn, tn), 2))
     print("Precision:", round(precision(tp, fp, fn, tn), 2))
